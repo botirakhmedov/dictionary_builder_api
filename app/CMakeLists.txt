@@ -2,7 +2,7 @@ project(api
     VERSION 1.0.0
     LANGUAGES C CXX)
 
-set(SERVER_EXECUTABLE_NAME "pai")
+set(SERVER_EXECUTABLE_NAME "api")
 
 set(EXE_SOURCES
     "main.cpp")
