@@ -1,8 +1,4 @@
-project(api
-    VERSION 1.0.0
-    LANGUAGES C CXX)
-
-set(SERVER_EXECUTABLE_NAME "api")
+set(SERVER_EXECUTABLE_NAME api)
 
 set(EXE_SOURCES
     "main.cpp")
@@ -19,6 +15,13 @@ target_include_directories(${SERVER_EXECUTABLE_NAME} PUBLIC
     ${EXE_CONFIG_INCLUDES}
     )
 
+target_link_libraries(${SERVER_EXECUTABLE_NAME} PUBLIC
+    ${COMMON_LIBRARY_NAME}
+    )
+
+target_link_libraries(${SERVER_EXECUTABLE_NAME} INTERFACE
+    "${CMAKE_SOURCE_DIR}/src/common"
+    )
 
 if (ENABLE_WARNINGS)
     target_set_warnings(
@@ -40,7 +43,3 @@ if(${ENABLE_CLANG_TIDY})
     add_clang_tidy_to_target(${SERVER_EXECUTABLE_NAME})
 endif()
 
-# target_link_libraries(${SERVER_EXECUTABLE_NAME} PUBLIC
-#     boost_asio
-#     fmt::fmt
-#     )

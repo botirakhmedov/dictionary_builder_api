@@ -1,5 +1,6 @@
 #include "server_config.hpp"
 #include <iostream>
+#include "WordDto.hpp"
 
 int main()
 {

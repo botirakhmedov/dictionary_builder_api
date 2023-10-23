@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.21)
 
 project(
-    "cpptemplate"
+    "dictionary_builder"
     VERSION 1.0.0
     LANGUAGES C CXX)
 
@@ -53,8 +53,16 @@ endif()
 
 add_clang_format_target()
 
-
+# ## link oat++
+# find_package(oatpp          1.3.0 REQUIRED)
+# find_package(oatpp-swagger  1.3.0 REQUIRED)
+# target_link_libraries(crud-lib
+#         # Oat++
+#         PUBLIC oatpp::oatpp
+#         PUBLIC oatpp::oatpp-swagger
+# )
 # SUB DIRECTORIES
 
 add_subdirectory(configured)
+add_subdirectory(src)
 add_subdirectory(app)
